@@ -43,4 +43,15 @@ public class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	stringCalculator.add("1,-2,3");
     }
+    @Test
+    public final void string_with_negative_number_is_give_RuntimeExceptionMessage_with_negative_number() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	RuntimeException exception = null;
+        try {
+            stringCalculator.add("1,-2,3,-4");
+        } catch (RuntimeException e) {
+            exception = e;
+        }
+        Assert.assertEquals("Negatives not allowed: [-2, -4]", exception.getMessage());
+    }
 }
