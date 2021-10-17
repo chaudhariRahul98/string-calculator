@@ -54,4 +54,9 @@ public class StringCalculatorShould {
         }
         Assert.assertEquals("Negatives not allowed: [-2, -4]", exception.getMessage());
     }
+    @Test
+    public void string_with_number_bigger_than_1000_ignored_return_number_as_int() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(2, stringCalculator.add("1001,2"));
+    }
 }

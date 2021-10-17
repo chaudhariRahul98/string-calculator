@@ -23,8 +23,10 @@ public class StringCalculator {
     			int num =Integer.parseInt(string);
     			if(num < 0) {
     				negative.add(num);
+    			}else if (num <= 1000) {
+    				returnValue +=  num ;
     			}
-    			returnValue +=  num ;
+    			
     		}
     	} else {
     		return Integer.parseInt(input);
