@@ -37,4 +37,10 @@ public class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
         assertEquals(3, stringCalculator.add("//;/n1;2"));
     }
+    
+    @Test(expected = RuntimeException.class)
+    public final void string_with_negative_number_is_give_RuntimeException() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	stringCalculator.add("1,-2,3");
+    }
 }

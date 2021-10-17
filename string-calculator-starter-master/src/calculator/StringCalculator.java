@@ -1,11 +1,15 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class StringCalculator {
 
     public int add(String input) {
     	int returnValue = 0;
     	String delimiter = ",|n";
         String numbersWithoutDelimiter = input;
+        List negative = new ArrayList();
     	if(input.isEmpty()) {
     		return returnValue;
     	}else if (input.startsWith("//")) {
@@ -17,10 +21,16 @@ public class StringCalculator {
     		String[] numbersArray = input.split(",|/n");
     		for (String string : numbersArray) {
     			int num =Integer.parseInt(string);
+    			if(num < 0) {
+    				negative.add(num);
+    			}
     			returnValue +=  num ;
     		}
     	} else {
     		return Integer.parseInt(input);
+    	}
+    	if(negative.size() >0) {
+    		throw new RuntimeException("Negatives not allowed: "+negative.toString());
     	}
     	return returnValue;	
     }
