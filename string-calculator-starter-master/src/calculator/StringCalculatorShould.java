@@ -22,4 +22,9 @@ public class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	 assertEquals(3, stringCalculator.add("1,2"));
     }
+    @Test
+    public void string_with_more_than_two_number_should_return_number_as_int() {
+    	StringCalculator stringCalculator = new StringCalculator();
+        assertEquals(10, stringCalculator.add("1,2,3,4"));
+    }
 }
