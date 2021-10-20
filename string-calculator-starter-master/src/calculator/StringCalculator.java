@@ -9,10 +9,30 @@ public class StringCalculator {
     	int returnValue = 0;
     	String delimiter = ",|n";
         String numbersWithoutDelimiter = input;
+        String numbers = input;
         List negative = new ArrayList();
     	if(input.isEmpty()) {
     		return returnValue;
-    	}else if (input.startsWith("//")) {
+    	}else if(input.startsWith("E")){
+    		 numbers = input.substring(input.indexOf("E") + 1);
+    		String[] strings= numbers .split(",");
+    		for (String string : strings) {
+    			int num =Integer.parseInt(string);
+    			if ((num%2)==0) {
+					returnValue += num;
+				}
+			}
+    	}else if(input.startsWith("O")){
+    		 numbers = input.substring(input.indexOf("O") + 1);
+     		String[] strings= numbers .split(",");
+    		for (String string : strings) {
+    			int num =Integer.parseInt(string);
+    			if ((num%2)==1) {
+					returnValue += num;
+				}
+			}
+    	}
+    	else if (input.startsWith("//")) {
             int delimiterIndex = input.indexOf("//") + 2;
             delimiter = input.substring(delimiterIndex, delimiterIndex + 1);
             numbersWithoutDelimiter = input.substring(input.indexOf("n") + 1);

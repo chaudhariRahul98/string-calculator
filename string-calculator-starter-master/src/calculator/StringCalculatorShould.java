@@ -59,4 +59,15 @@ public class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	 assertEquals(2, stringCalculator.add("1001,2"));
     }
+    @Test
+    public void string_with_add_of_even_number_return_number_as_int() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(2, stringCalculator.add("E1,2,3"));
+    }
+    @Test
+    public void string_with_add_of_odd_number_return_number_as_int() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	 assertEquals(4, stringCalculator.add("O1,2,3"));
+    }
+    
 }
