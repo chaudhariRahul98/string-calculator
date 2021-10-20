@@ -15,7 +15,7 @@ public class StringCalculator {
     		return returnValue;
     	}else if(input.startsWith("E")){
     		 numbers = input.substring(input.indexOf("E") + 1);
-    		String[] strings= numbers .split(",");
+    		String[] strings= numbers .split(delimiter);
     		for (String string : strings) {
     			int num =Integer.parseInt(string);
     			if ((num%2)==0) {
@@ -24,7 +24,7 @@ public class StringCalculator {
 			}
     	}else if(input.startsWith("O")){
     		 numbers = input.substring(input.indexOf("O") + 1);
-     		String[] strings= numbers .split(",");
+     		String[] strings= numbers .split(delimiter);
     		for (String string : strings) {
     			int num =Integer.parseInt(string);
     			if ((num%2)==1) {
